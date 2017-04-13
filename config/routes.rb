@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
-  get :autocomplete_employee_username, :on => :collection
+  #get :autocomplete_employee_username, :employee => :username
   
 end
