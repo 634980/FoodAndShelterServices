@@ -1,0 +1,10 @@
+<% provide(:title, 'All Sites') %>
+<h1>All Sites</h1>
+
+<ul class="users">
+  <% @sites.each do |site| %>
+    <li>
+      <%= link_to site.site_name, site %>
+    </li>
+  <% end %>
+</ul>

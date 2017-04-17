@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   root 'employees#home'
   resources :employees
   resources :clients
+  resources :sites
   get 'addemployee', to: 'employees#new'
   get 'addclient', to: 'clients#new'
+  get 'addsite' , to: 'sites#new'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
