@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   autocomplete :employee, :username
+  
   def new
   end
 

@@ -1,5 +1,9 @@
-class EmployeeController < ApplicationController
+class EmployeesController < ApplicationController
   def home
+  end
+  
+  def index
+    @employees=Employee.all
   end
   
   def new
@@ -12,9 +16,9 @@ class EmployeeController < ApplicationController
   
   def create
     @employee =Employee.new(employee_params)
-    if user.save
+    if @employee.save
       flash[:success] = "Employee added into the system"
-      redirect_to @employee
+      redirect_to employees_path
     else
       render root_path
     end
@@ -26,5 +30,4 @@ class EmployeeController < ApplicationController
       params.require(:employee).permit(:name, :address, :contact, :email, :username, :password,
                                    :password_confirmation)
   end
-  
 end
