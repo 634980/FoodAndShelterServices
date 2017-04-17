@@ -1,0 +1,10 @@
+<% provide(:title, 'All Clients') %>
+<h1>All Clients</h1>
+
+<ul class="users">
+  <% @clients.each do |client| %>
+    <li>
+      <%= link_to client.full_name, client %>
+    </li>
+  <% end %>
+</ul>
