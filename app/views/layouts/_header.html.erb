@@ -1,10 +1,33 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
         <%= link_to "Serve the people", '#', id: "logo" %>
+        <li>
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Home",   root_path %></li>
             <% if logged_in? %>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Add <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Add Employee", addemployee_url %></li>
+              <li><%= link_to "Add Site", addsite_url %></li>
+              <li><%= link_to "Add Client", addclient_url %></li>
+              <li class="divider"></li>
+            </ul>
+            </li>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Show <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Show Employees", employees_url %></li>
+              <li><%= link_to "Show Sites", sites_url %></li>
+              <li><%= link_to "Show Clients", clients_url %></li>
+              <li class="divider"></li>
+            </ul>
+          </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Account <b class="caret"></b>

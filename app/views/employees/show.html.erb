@@ -47,20 +47,8 @@ function openTask(evt, taskName) {
 }
 
 $( function() {
-    var availableTags = [
-     "Bhavin",
-     "Bob",
-     "Bradley",
-     "Shwetha",
-     "john",
-     "ruby",
-     "Example1",
-     "Example2",
-     "Example3",
-     "Example4",
-     "Example5",
-     "Rails"
-    ];
+    var availableTags = @employee.name;
+    
       $( "#tags" ).autocomplete({
       source: availableTags
     });
