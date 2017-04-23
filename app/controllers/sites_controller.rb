@@ -17,7 +17,7 @@ class SitesController < ApplicationController
       flash[:success] = "Site added into the system"
       redirect_to sites_path
     else
-      render root_path
+      render 'new'
     end
   end
   

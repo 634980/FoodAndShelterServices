@@ -18,7 +18,7 @@ class ClientsController < ApplicationController
       flash[:success] = "Client added into the system"
       redirect_to clients_path
     else
-      render root_path
+      render 'new'
     end
   end
   

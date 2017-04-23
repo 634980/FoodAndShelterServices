@@ -20,7 +20,7 @@ class EmployeesController < ApplicationController
       flash[:success] = "Employee added into the system"
       redirect_to employees_path
     else
-      render root_path
+      render 'new'
     end
   end
   
