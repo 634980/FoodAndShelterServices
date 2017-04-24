@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   resources :employees
   resources :clients
   resources :sites
-  resources :services
+  resources :service1s
   
   get 'addemployee', to: 'employees#new'
   get 'addclient', to: 'clients#new'
   get 'addsite' , to: 'sites#new'
-  get 'addservice', to: 'services#new'
+  get 'addservice', to: 'service1s#new'
   
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

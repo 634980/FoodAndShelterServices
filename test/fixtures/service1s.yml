@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  service_type: MyString
+  employee_name: MyString
+  site_name: MyString
+  client_name: MyString
+  date: MyString
+
+two:
+  service_type: MyString
+  employee_name: MyString
+  site_name: MyString
+  client_name: MyString
+  date: MyString

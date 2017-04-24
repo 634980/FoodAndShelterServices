@@ -1,7 +1,8 @@
 require 'test_helper'
 
-class ServiceTest < ActiveSupport::TestCase
+class EmployeesLoginTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
+  
 end

@@ -1,11 +1,11 @@
 <!-- For Service error messages -->
-<% if @service.errors.any? %>
+<% if @service1.errors.any? %>
   <div id="error_explanation">
     <div class="alert alert-danger">
-      The form contains <%= pluralize(@service.errors.count, "error") %>.
+      The form contains <%= pluralize(@service1.errors.count, "error") %>.
     </div>
     <ul>
-    <% @service.errors.full_messages.each do |msg| %>
+    <% @service1.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>

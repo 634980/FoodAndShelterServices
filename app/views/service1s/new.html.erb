@@ -3,23 +3,23 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@service) do |f| %>
+    <%= form_for(@service1) do |f| %>
     <%= render 'shared/error_messages_service' %>
     
       <%= f.label :service_type %>
       <%= f.text_field :service_type, class: 'form-control' %>
       
-      <%= f.label :site_id %>
-      <%= f.text_field :site_id, class: 'form-control' %>
+      <%= f.label :employee_name %>
+      <%= f.text_field :employee_name, class: 'form-control' %>
       
-      <%= f.label :employee_id %>
-      <%= f.text_field :employee_id, class: 'form-control' %>
+      <%= f.label :site_name %>
+      <%= f.text_field :site_name, class: 'form-control' %>
       
-      <%= f.label :client_id %>
-      <%= f.text_field :client_id, class: 'form-control' %>
+      <%= f.label :client_name %>
+      <%= f.text_field :client_name, class: 'form-control' %>
       
       <%= f.label :date %>
-      <%= f.text_field :date, class: 'form-control' %>
+      <%= f.text_field :date, 'data-behaviour' => 'datepicker' %>
 
       <%= f.submit "Add", class: "btn btn-primary" %>
     <% end %>

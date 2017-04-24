@@ -2,55 +2,6 @@
 <h2> Hi, <%= @employee.name %></h2>
 <h2>Current Time is <%= Time.zone.now %> </h2>
 
-<div class="tab">
-  <button class="tablinks" onclick="openTask(event, 'Add Client')">Add Client</button>
-  <button class="tablinks" onclick="openTask(event, 'Food Pantry')">Food Pantry</button>
-  <button class="tablinks" onclick="openTask(event, 'Shelter')">Shelter</button>
-</div>
-
-<div id="Add Client" class="tabcontent">
-  <h3>Add Client</h3>
-  <p>Add client details into the system.
-  <form class="form-wrapper">
-    <input type="text" id="tags" placeholder="Search for..." required>
-    <input type="submit" value="go" id="submit">
-  </form>
-  </p>
-</div>
-
-<div id="Food Pantry" class="tabcontent">
-  <h3>Food Pantry</h3>
-  <p>Add the food services used by the client.</p> 
-</div>
-
-<div id="Shelter" class="tabcontent">
-  <h3>Shelter</h3>
-  <p>Add the shelter services used by the client.</p>
-</div>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="/resources/demos/style.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script>
-function openTask(evt, taskName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(taskName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-
-$( function() {
-    var availableTags = @employee.name;
-    
-      $( "#tags" ).autocomplete({
-      source: availableTags
-    });
-  } );
-</script>
+<h2>Works at <% @site_info=Site.limit(5).order("RANDOM()").first  %> <%= @site_info.site_name %> Site</h2>
+<h2><%=@site_info.site_name%> Site Phone number: <%= @site_info.site_contact_number %></h2>
+<h2>Client count: <% @client_count=Client.count() %> <%= @client_count %></h2>

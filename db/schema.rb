@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170420195527) do
+ActiveRecord::Schema.define(version: 20170424002054) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "full_name"
@@ -29,6 +29,16 @@ ActiveRecord::Schema.define(version: 20170420195527) do
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
     t.index ["username"], name: "index_employees_on_username", unique: true
+  end
+
+  create_table "service1s", force: :cascade do |t|
+    t.string   "service_type"
+    t.string   "employee_name"
+    t.string   "site_name"
+    t.string   "client_name"
+    t.string   "date"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "services", force: :cascade do |t|
