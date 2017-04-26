@@ -7,6 +7,7 @@ class Service1sController < ApplicationController
   end
 
   def index
+    @services=Service1.all
   end
 
   def create
@@ -17,6 +18,12 @@ class Service1sController < ApplicationController
     else
       render 'new'
     end
+  end
+  
+  def destroy
+    Service1.find(params[:id]).destroy
+    flash[:success] = "Servive Approved"
+    redirect_to service1s_url
   end
   
   private

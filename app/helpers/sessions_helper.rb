@@ -15,4 +15,8 @@ module SessionsHelper
     session.delete(:employee_id)
     @current_employee = nil
   end
+  
+  def current_employee?(employee)
+    employee == current_employee
+  end
 end

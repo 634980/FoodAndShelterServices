@@ -1,5 +1,5 @@
 <% provide(:title, 'Add Service') %>
-<h1>Add Service</h1>
+<h1>What kind of service client need?</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -7,13 +7,13 @@
     <%= render 'shared/error_messages_service' %>
     
       <%= f.label :service_type %>
-      <%= f.text_field :service_type, class: 'form-control' %>
+      <%= f.text_field :service_type, id: 'serviceType', class: 'form-control' %>
       
       <%= f.label :employee_name %>
-      <%= f.text_field :employee_name, class: 'form-control' %>
+      <%= f.text_field :employee_name, id: "EmployeeName", class: 'form-control' %>
       
       <%= f.label :site_name %>
-      <%= f.text_field :site_name, class: 'form-control' %>
+      <%= f.text_field :site_name, id: "siteName", class: 'form-control' %>
       
       <%= f.label :client_name %>
       <%= f.text_field :client_name, class: 'form-control' %>
@@ -25,3 +25,28 @@
     <% end %>
   </div>
 </div>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+$( function() {
+     var availableTags = ["Food","Shelter","Clothing"];
+    $( "#serviceType" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  $( function() {
+     var availableTags = ["Bhavin","Bob","Shwetha"];
+    $( "#EmployeeName" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  $( function() {
+     var availableTags = ["Magnolia","Adams"];
+    $( "#siteName" ).autocomplete({
+      source: availableTags
+    });
+  } );
+</script>

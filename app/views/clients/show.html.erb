@@ -1,6 +1,6 @@
 <% provide(:title, @client.full_name) %>
 <h1> Details of client </h1>
-<%= gravatar_for @client %>
+<%= gravatar_for_client @client %>
 <h2> Name of the client: <%= @client.full_name %></h2>
 <h2>Contact number of the client: <%= @client.phone_number %> </h2>
 

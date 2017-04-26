@@ -1,7 +1,10 @@
 <% provide(:title, @employee.name) %>
 <h2> Hi, <%= @employee.name %></h2>
+<%= image_tag("employee-profile-header.jpg", alt: "Image", :align => "middle") %>
 <h2>Current Time is <%= Time.zone.now %> </h2>
 
-<h2>Works at <% @site_info=Site.limit(5).order("RANDOM()").first  %> <%= @site_info.site_name %> Site</h2>
-<h2><%=@site_info.site_name%> Site Phone number: <%= @site_info.site_contact_number %></h2>
-<h2>Client count: <% @client_count=Client.count() %> <%= @client_count %></h2>
+<h2>Site Name: <% @site_info=Site.limit(5).order("RANDOM()").first  %> <%= @site_info.site_name %> </h2>
+<h2><%=@site_info.site_name%> Contact: <%= @site_info.site_contact_number %></h2>
+
+
+

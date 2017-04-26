@@ -4,6 +4,10 @@ class ClientsController < ApplicationController
     @clients=Client.all
   end
   
+  def dailyService
+    @clients=Client.all
+  end
+  
   def new
     @client = Client.new
   end
@@ -20,6 +24,26 @@ class ClientsController < ApplicationController
     else
       render 'new'
     end
+  end
+  
+  def edit
+    @client = Client.find(params[:id])
+  end
+  
+  def update
+    @client = Client.find(params[:id])
+    if @client.update_attributes(client_params)
+            flash[:success] = "Client updated"
+      redirect_to @client
+    else
+      render 'edit'
+    end
+  end
+  
+  def destroy
+    Client.find(params[:id]).destroy
+    flash[:success] = "Client deleted"
+    redirect_to clients_url
   end
   
   private
